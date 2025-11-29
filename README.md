@@ -1,3 +1,2 @@
-# indicai
 
-A new Flutter project.
+# Indicai-Mobile
