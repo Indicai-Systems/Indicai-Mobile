@@ -1,8 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:indicai/pages/login.dart';
+import 'package:indicai/pages/login/login.dart';
+import 'package:indicai/pages/signup/signup.dart';
 import 'pages/splashScreen.dart'; 
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MainApp());
 }
 
@@ -11,13 +19,28 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    FirebaseAuth.instance
+    .authStateChanges()
+    .listen((User? user) {
+      if (user == null) {
+        print('User is currently signed out!');
+      } else {
+        print('User is signed in!');
+      }
+    });
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: "/splash",
       routes: {
-        "/splash": (_) =>  SplashScreen(),
+        "/splash": (_) => SplashScreen(),
         "/login": (_) => Login(),
-      }
+        "/signup/email-step": (_) => SignupEmailStep(),
+        "/signup/password-step": (_) => SignupPasswordStep(),
+        "/signup/password-step": (_) => SignupPasswordStep(),
+
+
+      },
     );
   }
 }
