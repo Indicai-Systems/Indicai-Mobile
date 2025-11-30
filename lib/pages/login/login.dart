@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -37,7 +38,7 @@ class _LoginState extends State<Login> {
                textAlign: TextAlign.center,
                style: TextStyle(
                  fontSize: 30,
-                 fontWeight: FontWeight.bold,
+                 fontWeight: FontWeight.w800,
                  ),
                ),
            ),
@@ -168,13 +169,19 @@ class _LoginState extends State<Login> {
              )
            ),
            SizedBox(height: 20),
-           Text(
-             "Esqueceu sua senha?",
-             textAlign: TextAlign.center,
-             style: TextStyle(
-               color: Color(0xffE21584),        // Cor de fundo
-               fontSize: 16, )
+           GestureDetector(
+             onTap: () {
+               Navigator.pushNamed(context, "/signup/email-step");
+             },
+             child:Text(
+              "Não possui uma conta? Cadastra-se",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Color(0xffE21584),        // Cor de fundo
+                fontSize: 16, )
+            )
            )
+           
          ]  
        ) 
 

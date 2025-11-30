@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "774242664448",
+    "project_id": "indicai-2ba4d",
+    "storage_bucket": "indicai-2ba4d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774242664448:android:1d562e7a992085bf87d8e5",
+        "android_client_info": {
+          "package_name": "com.example.indicai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774242664448-29o2sp96r07jddjhf7svf76q321134jc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_fS2M7CgHzVWokHVuIQ8K1aIqjbW4vRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774242664448-29o2sp96r07jddjhf7svf76q321134jc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
