@@ -25,6 +25,9 @@ flutter:
 
   assets:
    - assets/images/logo.svg
+   - assets/icons/local-orange.svg
+   - assets/icons/arrow-right.svg
+   - assets/icons/user-orange.svg
 
   fonts:
     - family: Schyler

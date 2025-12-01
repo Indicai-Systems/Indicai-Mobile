@@ -37,7 +37,14 @@ class MainApp extends StatelessWidget {
         "/login": (_) => Login(),
         "/signup/email-step": (_) => SignupEmailStep(),
         "/signup/password-step": (_) => SignupPasswordStep(),
-        "/signup/password-step": (_) => SignupPasswordStep(),
+        "/signup/account-options-step": (_) => SignupAccountOptionsStep(),
+        "/signup/vendor-name-step": (_) => SignupVendorNameStep(),
+        "/signup/vendor-specialties-step": (_) => SignupVendorSpecialtiesStep(),
+        "/signup/vendor-adress-step": (_) => SignupVendorAdressStep(),
+        "/signup/vendor-opening-hours-step": (_) => SignupVendorOpeningHoursStep(),
+        "/signup/vendor-opening-hours2-step": (_) => SignupVendorOpeningHours2Step(),
+        "/signup/vendor-opening-hours3-step": (_) => SignupVendorOpeningHours3Step(),
+
 
 
       },
