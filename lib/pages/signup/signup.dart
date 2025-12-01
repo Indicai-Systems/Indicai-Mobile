@@ -140,7 +140,76 @@ class _SignupEmailStepState extends State<SignupEmailStep> {
                 color: Color(0xffE21584),        
                 fontSize: 16, )
             )
+           ),
+           SizedBox(height: 50),
+
+           Center(
+            child:Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+             children: [
+               Container(
+                 width: 100,
+                 height: 1,
+                 color: Colors.grey,
+                 margin: EdgeInsets.symmetric(vertical: 8),
+               ),
+               SizedBox(width: 10),
+               Text("  Ou  ", 
+                 style: TextStyle(
+                   fontSize: 16,
+                   color: Colors.grey[800],
+                 ),
+               ),
+               SizedBox(width: 10),
+               Container(
+                 width: 100,
+                 height: 1,
+                 color: Colors.grey,
+                 margin: EdgeInsets.symmetric(vertical: 8),
+               ),
+             ],
            )
+          ),
+          SizedBox(height: 20),
+          Container(
+            width: 300,
+            height: 60,
+            child:
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,        // Cor de fundo
+                foregroundColor: Colors.black,       // Cor do texto/ícone
+                padding: EdgeInsets.all(
+                  15
+                ),
+                shape: RoundedRectangleBorder(       // Borda arredondada
+                  borderRadius: BorderRadius.circular(12),
+                  side: BorderSide(
+                    color: Colors.grey[200]!,
+                    width: 1,
+                  ),
+                ),
+                elevation: 0,                        // Sombra
+              ),
+              child:
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SvgPicture.asset(
+                    "assets/icons/google-icon.svg", 
+                    width: 20,
+                  ),
+                  SizedBox(width: 10),
+                  Text(
+                    "Registrar-se com o Google",
+                    style: TextStyle(fontSize: 18,
+                    color: Colors.grey[700]!,),
+                  ),
+                ],
+              ),
+            )
+          )
          ]  
        ) 
 
@@ -455,7 +524,7 @@ class _SignupAccountOptionsStepState extends State<SignupAccountOptionsStep> {
                ),
              ],  
            ),           
-           SizedBox(height: 120),
+          SizedBox(height: 120),
           GestureDetector(
              onTap: () {
                Navigator.pushNamed(context, "/signup/password-step");
@@ -467,7 +536,8 @@ class _SignupAccountOptionsStepState extends State<SignupAccountOptionsStep> {
                 color: Color(0xffE21584),        // Cor de fundo
                 fontSize: 16, )
             )
-           )
+           ),
+          
          ]  
        ) 
 
