@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:indicai/pages/login/login.dart';
 import 'package:indicai/pages/signup/signup.dart';
+import 'package:indicai/pages/signup/signup-vendor.dart';
+
 import 'pages/splashScreen.dart'; 
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -37,7 +39,14 @@ class MainApp extends StatelessWidget {
         "/login": (_) => Login(),
         "/signup/email-step": (_) => SignupEmailStep(),
         "/signup/password-step": (_) => SignupPasswordStep(),
-        "/signup/password-step": (_) => SignupPasswordStep(),
+        "/signup/account-options-step": (_) => SignupAccountOptionsStep(),
+        "/signup/vendor-name-step": (_) => SignupVendorNameStep(),
+        "/signup/vendor-specialties-step": (_) => SignupVendorSpecialtiesStep(),
+        "/signup/vendor-adress-step": (_) => SignupVendorAdressStep(),
+        "/signup/vendor-opening-hours-step": (_) => SignupVendorOpeningHoursStep(),
+        "/signup/vendor-opening-hours2-step": (_) => SignupVendorOpeningHours2Step(),
+        "/signup/vendor-opening-hours3-step": (_) => SignupVendorOpeningHours3Step(),
+
 
 
       },
