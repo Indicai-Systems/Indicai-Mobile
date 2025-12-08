@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:indicai/pages/login/login.dart';
 import 'package:indicai/pages/signup/signup.dart';
 import 'package:indicai/pages/signup/signup-vendor.dart';
+import 'package:indicai/pages/signup/signup-user.dart';
 
 import 'pages/splashScreen.dart'; 
 import 'package:firebase_core/firebase_core.dart';
@@ -46,8 +47,9 @@ class MainApp extends StatelessWidget {
         "/signup/vendor-opening-hours-step": (_) => SignupVendorOpeningHoursStep(),
         "/signup/vendor-opening-hours2-step": (_) => SignupVendorOpeningHours2Step(),
         "/signup/vendor-opening-hours3-step": (_) => SignupVendorOpeningHours3Step(),
-
-
+        "/signup/signup-user": (_) => SignupUserNameStep(),
+        "/signup/user-restrictions-step": (_) => SignupUserRestrictionStep(),
+        "/signup/user-city-step": (_) => SignupUserCityStep(),
 
       },
     );

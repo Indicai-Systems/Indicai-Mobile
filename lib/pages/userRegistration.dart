@@ -1,0 +1,222 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+class Login extends StatefulWidget {
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 40),
+
+            Center(
+              child: SvgPicture.asset(
+                "assets/images/logo.svg",
+                width: 200,
+              ),
+            ),
+
+            SizedBox(height: 60),
+
+            // TÍTULO
+            Container(
+              width: 300,
+              child: Text(
+                "Preencha as credenciais",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            // CAMPOS DO FORMULÁRIO
+            SizedBox(height: 40),
+
+            // ------------------------------
+            // CAMPO NOME DE USUÁRIO
+            // ------------------------------
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Nome de usuário",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+                SizedBox(height: 8),
+
+                Container(
+                  width: 350,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(9),
+                        borderSide: BorderSide(
+                          width: 1,
+                          style: BorderStyle.solid,
+                          color: Color.fromARGB(255, 197, 197, 197),
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(9),
+                        borderSide: BorderSide(
+                          width: 1,
+                          style: BorderStyle.solid,
+                          color: Color.fromARGB(255, 197, 197, 197),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            SizedBox(height: 20),
+
+            // ------------------------------
+            // CAMPO SENHA
+            // ------------------------------
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Genêro",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+                SizedBox(height: 8),
+
+                Container(
+                  width: 350,
+                  child: TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(9),
+                        borderSide: BorderSide(
+                          width: 1,
+                          style: BorderStyle.solid,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(9),
+                        borderSide: BorderSide(
+                          width: 1,
+                          style: BorderStyle.solid,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            SizedBox(height: 20),
+
+            // ------------------------------
+            // CAMPO DATA NASCIMENTO
+            // ------------------------------
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Data de Nascimento",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+                SizedBox(height: 8),
+
+                Container(
+                  width: 350,
+                  child: TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(9),
+                        borderSide: BorderSide(
+                          width: 1,
+                          style: BorderStyle.solid,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(9),
+                        borderSide: BorderSide(
+                          width: 1,
+                          style: BorderStyle.solid,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            SizedBox(height: 60),
+
+            // BOTÃO ENTRAR
+            Center(
+              child: Container(
+                height: 50,
+                width: 350,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xffE21584),
+                    foregroundColor: Colors.white,
+                    padding: EdgeInsets.all(15),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    elevation: 0,
+                  ),
+                  child: Text(
+                    "Entrar",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
+            ),
+
+            SizedBox(height: 20),
+
+            Text(
+              "Esqueceu sua senha?",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Color(0xffE21584),
+                fontSize: 16,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
