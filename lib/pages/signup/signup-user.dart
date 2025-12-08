@@ -10,6 +10,9 @@ class _SignupUserNameStepState extends State<SignupUserNameStep> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController restrictionController = TextEditingController();
   final TextEditingController deficiencyController = TextEditingController();
+  String? selectedGender;
+
+  final List<String> gender = ["Feminino", "Masculino", "Outros"];
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +29,6 @@ class _SignupUserNameStepState extends State<SignupUserNameStep> {
               ),
               SizedBox(height: 60),
 
-              // Título
               Container(
                 width: 300,
                 child: Text(
@@ -38,13 +40,11 @@ class _SignupUserNameStepState extends State<SignupUserNameStep> {
 
               SizedBox(height: 15),
 
-              // FORMULÁRIO
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: 40),
 
-                  // Nome de Usuário
                   Text(
                     "Nome de usuário*",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -73,7 +73,6 @@ class _SignupUserNameStepState extends State<SignupUserNameStep> {
 
                   SizedBox(height: 20),
 
-                  // Gênero
                   Text(
                     "Gênero*",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -81,7 +80,8 @@ class _SignupUserNameStepState extends State<SignupUserNameStep> {
                   SizedBox(height: 8),
                   Container(
                     width: 350,
-                    child: TextFormField(
+                    child: DropdownButtonFormField<String>(
+                      value: selectedGender,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(9),
@@ -90,10 +90,22 @@ class _SignupUserNameStepState extends State<SignupUserNameStep> {
                             color: Color.fromARGB(255, 197, 197, 197),
                           ),
                         ),
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 14,
+                        ),
                       ),
-                     validator: (value) {
-                        if (value == null || value.trim().isEmpty) {
-                          return "Este campo é obrigatório";
+                      items: gender.map((g) {
+                        return DropdownMenuItem(value: g, child: Text(g));
+                      }).toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          selectedGender = value;
+                        });
+                      },
+                      validator: (value) {
+                        if (value == null) {
+                          return "Selecione uma opção";
                         }
                         return null;
                       },
@@ -101,7 +113,6 @@ class _SignupUserNameStepState extends State<SignupUserNameStep> {
                   ),
 
                   SizedBox(height: 20),
-                  // Data de nascimento
                   Text(
                     "Data de nascimento*",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -132,7 +143,6 @@ class _SignupUserNameStepState extends State<SignupUserNameStep> {
               ),
               SizedBox(height: 60),
 
-              // BOTÃO AVANÇAR → Restrição do Usuário
               Container(
                 height: 50,
                 width: 350,
@@ -160,7 +170,6 @@ class _SignupUserNameStepState extends State<SignupUserNameStep> {
 
               SizedBox(height: 20),
 
-              // VOLTAR → Escolha do tipo de conta
               GestureDetector(
                 onTap: () {
                   Navigator.pushNamed(context, "/signup/account-options-step");
@@ -195,7 +204,7 @@ class _SignupUserRestrictionStepState extends State<SignupUserRestrictionStep> {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Form(
-          key: _formKey, // <- FORM ADICIONADO
+          key: _formKey,
           child: Column(
             children: [
               SizedBox(height: 40),
@@ -217,11 +226,9 @@ class _SignupUserRestrictionStepState extends State<SignupUserRestrictionStep> {
 
               SizedBox(height: 40),
 
-              // FORMULÁRIO
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Restrição
                   Text(
                     "Possui alguma restrição?*",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -252,7 +259,6 @@ class _SignupUserRestrictionStepState extends State<SignupUserRestrictionStep> {
 
                   SizedBox(height: 20),
 
-                  // Deficiência
                   Text(
                     "Possui alguma deficiência?*",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -285,17 +291,13 @@ class _SignupUserRestrictionStepState extends State<SignupUserRestrictionStep> {
 
               SizedBox(height: 60),
 
-              // BOTÃO AVANÇAR
               Container(
                 height: 50,
                 width: 350,
                 child: ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      Navigator.pushNamed(
-                        context,
-                        "/signup/user-city-step",
-                      );
+                      Navigator.pushNamed(context, "/signup/user-city-step");
                     }
                   },
                   style: ElevatedButton.styleFrom(
@@ -330,8 +332,7 @@ class _SignupUserRestrictionStepState extends State<SignupUserRestrictionStep> {
 
 class SignupUserCityStep extends StatefulWidget {
   @override
-  _SignupUserCityStepState createState() =>
-      _SignupUserCityStepState();
+  _SignupUserCityStepState createState() => _SignupUserCityStepState();
 }
 
 class _SignupUserCityStepState extends State<SignupUserCityStep> {
@@ -366,7 +367,6 @@ class _SignupUserCityStepState extends State<SignupUserCityStep> {
 
               SizedBox(height: 40),
 
-              // FORMULÁRIO
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -402,7 +402,6 @@ class _SignupUserCityStepState extends State<SignupUserCityStep> {
                 ],
               ),
 
-              // BOTÃO AVANÇAR
               Container(
                 height: 50,
                 width: 350,
@@ -411,7 +410,7 @@ class _SignupUserCityStepState extends State<SignupUserCityStep> {
                     if (_formKey.currentState!.validate()) {
                       Navigator.pushNamed(
                         context,
-                        "/signup/signup-user",
+                        "/signup/user-interests-step",
                       );
                     }
                   },
@@ -444,4 +443,3 @@ class _SignupUserCityStepState extends State<SignupUserCityStep> {
     );
   }
 }
-

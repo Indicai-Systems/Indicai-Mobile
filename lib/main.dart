@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:indicai/pages/login/login.dart';
+import 'package:indicai/pages/signup/signup-interests.dart';
 import 'package:indicai/pages/signup/signup.dart';
 import 'package:indicai/pages/signup/signup-vendor.dart';
 import 'package:indicai/pages/signup/signup-user.dart';
@@ -50,7 +51,7 @@ class MainApp extends StatelessWidget {
         "/signup/signup-user": (_) => SignupUserNameStep(),
         "/signup/user-restrictions-step": (_) => SignupUserRestrictionStep(),
         "/signup/user-city-step": (_) => SignupUserCityStep(),
-
+        "/signup/user-interests-step": (_) => SignupUserInterestsStep(),
       },
     );
   }
